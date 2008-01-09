@@ -1,0 +1,132 @@
+\documentclass{minimal}
+
+\usepackage{ted}
+
+\makeatletter
+\let\sptoken= \@sptoken
+\let\hashtoken=#
+\let\tedout\ted@toks
+\def\nosanitize{\let\ted@sanitize\relax}
+\@ifdefinable\Test{%
+\long\def\Test#1\Endtest{%
+  \typeout{\unexpanded{#1}}%
+  #1}}
+\makeatother
+
+%% begin \Showtokens
+
+\ShowTokens{abc123}
+\ShowTokens{{}$&#^_ a0~b$\truc\relax}
+{ \let~=#%
+  \ShowTokens{a\ifx b\bgroup c\sptoken d\egroup e\hashtoken f~g\par}
+  }
+{ \uccode32=65 \catcode`B=10 \uccode`#=32
+  \uppercase{\ShowTokens{1 2B3#4}}%
+  }%
+\expandafter\let\csname truc chose \space abc\endcsname=#
+\tedout\expandafter{\csname truc chose \space abc\endcsname a {\ifx}b%
+  \bgroup lol}
+\ShowTokens*{\the\tedout}
+
+\edef\truc{12 45 789A \space2345 789B12 45 789C 2345 789D123456789E}
+\def\lol{aaaaaaa aaaaaaa aaaaaaaaa aaaaaaaaaaaaaa }
+\ShowTokens{a\truc 1\lol 2}
+
+\Test
+\ShowTokensLogonly
+\ShowTokens{{}$&#^_ a0~b$\truc\relax}
+\ShowTokensOnline
+\Endtest
+
+%% end \ShowTokens
+%% begin empty
+
+\ShowTokens{}
+\Substitute{}{a}{b}
+\showthe\tedout
+\Substitute{abc}{}{1}% donne a1b1c
+\showthe\tedout
+\Substitute{abcdeblabla}{a}{}
+\showthe\tedout
+
+%% end empty
+%% begin \Substitute
+
+\Substitute{a c}{a}{1}
+\ShowTokens*{\the\tedout}
+\Substitute{ }{}{}
+\ShowTokens*{\the\tedout}
+\Substitute{\sptoken}{}{}
+\ShowTokens*{\the\tedout}
+\Substitute{\bgroup}{}{}
+\ShowTokens*{\the\tedout}
+\Substitute{{}}{}{}
+\ShowTokens*{\the\tedout}
+\Substitute{#}{}{}
+\ShowTokens*{\the\tedout}
+
+\def\de{1}
+\def\vers{11}
+\tedout{a1b2c3d11e}
+\Substitute**{\the\tedout}{\de}{\vers}
+\ShowTokens*{\the\tedout}
+\tedout{a\de b\de c\de\de d}
+\Substitute*[\long\def\truc]{\the\tedout}{\de}{\vers}
+\show\truc
+
+{\catcode`(1 \catcode`)2
+\Substitute{\par@is{\par(par{\par1 )\p}ar}\p@r}\par\ifcat
+\showthe\tedout
+\expandafter}\expandafter\tedout\expandafter{\the\tedout}
+\showthe\tedout
+
+\expandafter\Substitute\expandafter{\the\tedout}\ifcat\par
+\showthe\tedout
+
+\Substitute{Joss est beau, {Joss } est intelligent, { Joss} aime bien jouer %
+  avec les catcodes{}. Josselin est un prénom bizarre.}{Joss}{Jean-Côme}
+\showthe\tedout
+
+\Substitute{Joss est beau, {Joss } est intelligent, { Joss} aime bien jouer %
+  avec les catcodes{}. Josselin est un prénom bizarre.}{Joss}{Josselin}
+\showthe\tedout
+
+\Substitute{ Paris{,} {cap{ital}e} {du} libre{.} }{a}{aa}
+\showthe\tedout
+
+\Substitute{a#b#c#d}{#b#}{11#11}
+\showthe\tedout
+
+\Substitute{a#b#c#d}{b#c}{1#2#3}
+\showthe\tedout
+
+\Substitute{a{b}c{bcb} { {b}}} {{b}} {b{1}b}
+\showthe\tedout
+
+{ \uccode32 65 \uppercase{\gdef\test{\Substitute{a a b}{A}{X}}}}
+\test
+\ShowTokens*{\the\tedout}
+
+%% end \Substitute
+
+\begin{document}
+
+ab\par
+a\ShowTokens{abc}b\par
+a\Substitute{abc}{b}{d}b\par
+
+\nosanitize
+\begingroup \lccode`0`\%
+\lowercase{\endgroup \wlog{0vim0 tex_stylish}}
+\outer\def\STOP{\relax}
+\tracingmacros1
+\tracingassigns1
+%\tracingcommands1
+%\tracingifs1
+
+\tracingmacros0
+\tracingassigns0
+\tracingcommands0
+\tracingifs0
+
+\stop

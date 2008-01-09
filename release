@@ -1,0 +1,16 @@
+Checklist pour chaque sortie
+
+- tester le truc à fond
+
+- enlever les traces de code de débogage
+
+- vraiment tester le truc
+
+- mettre à jour la date de le numéro de version dans le dtx
+
+- mettre à jour le README
+
+- renseigner le \CheckSum du dtx
+
+- compiler via dvips pour des pdf plus petits le cas échéant
+

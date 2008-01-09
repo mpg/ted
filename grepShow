@@ -1,0 +1,300 @@
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-24.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-16.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-12.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-11.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-20.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-23.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-17.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-13.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-21.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-25.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-19.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-18.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-14.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-15.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-22.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/doc/english/tlc2/8-8-10.ltx:&\precapprox \biguplus_{\mathbb{Q} \Subset \bar{\mathbf{Q}}}
+/usr/share/texmf-texlive/tex/generic/qpxqtx/amsqtx.tex:\newsymbol\Subset 1362
+/usr/share/texmf-texlive/tex/generic/qpxqtx/amsqpx.tex:\newsymbol\Subset 1362
+/usr/share/texmf-texlive/tex/generic/enctex/utf8raw.tex:\mubyte \Subset ^^e2^^8b^^90\endmubyte % U+22D0 double subset
+/usr/share/texmf-texlive/tex/generic/ofs/ofs-ams.tex:  \mathchardef\Subset               "3\hex\msamfam 62
+/usr/share/texmf-texlive/tex/latex/arev/ams-mdbch.sty:    \DeclareMathSymbol{\Subset}       {\mathrel}{mathdesignA}{"E2}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.sty:\newcommand\SubsectionFont{\normalsize\sf}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.sty:\newcommand\SubsubsectionFont{\normalsize\sf}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.sty:    -2ex plus-1ex minus-.2ex}{0.75ex plus.2ex}{\SubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.sty:    -2ex plus-1ex minus-.2ex}{0.75ex plus.2ex}{\SubsubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.sty:    0ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.sty:  {\parindent}{0ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk95.clo:\renewcommand\SubsectionFont{\normalsize\it}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk95.clo:\renewcommand\SubsubsectionFont{\normalsize\it}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk95.clo:    -1ex plus-1ex minus-.2ex}{0.75ex plus.2ex}{\SubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk95.clo:    -1ex plus-1ex minus-.2ex}{0.75ex plus.2ex}{\SubsubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk95.clo:    1ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk95.clo:  {\parindent}{1ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.cls:\newcommand\SubsectionFont{\normalsize\sf}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.cls:\newcommand\SubsubsectionFont{\normalsize\sf}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.cls:    -2ex plus-1ex minus-.2ex}{0.75ex plus.2ex}{\SubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.cls:    -2ex plus-1ex minus-.2ex}{0.75ex plus.2ex}{\SubsubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.cls:    0ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/dtk/dtk.cls:  {\parindent}{0ex plus1ex minus.2ex}{-.5ex}{\SubsubsectionFont}}
+/usr/share/texmf-texlive/tex/latex/pxfonts/pxfonts.sty:\re@DeclareMathSymbol{\Subset}{\mathrel}{AMSa}{98}
+/usr/share/texmf-texlive/tex/latex/txfonts/txfonts.sty:\re@DeclareMathSymbol{\Subset}{\mathrel}{AMSa}{98}
+/usr/share/texmf-texlive/tex/latex/imac/imac.sty:%\renewcommand{\subsection}[1]{\Subsection{#1}}
+/usr/share/texmf-texlive/tex/latex/imac/imac.sty:%\renewcommand{\subsubsection}[1]{\Subsubsection{\uppercase{#1}}}
+/usr/share/texmf-texlive/tex/latex/breqn/msabm.sym:\DeclareFlexSymbol{\Subset}       {Rel}{MSA}{62}
+/usr/share/texmf-texlive/tex/latex/microtype/mt-msa.cfg:     "62  =  { 50,   },  % \Subset
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\newlength{\SubsectionExtraWidth}
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\setlength{\SubsectionExtraWidth}{0em}
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\newlength{\SubsectionIndentWidth}
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\newlength{\SubsubsectionIndentWidth}
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\newlength{\SubsectionLabelWidth}
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\newlength{\SubsubsectionLabelWidth}
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:    \setlength{\SubsectionIndentWidth}{3.8em}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:    \addtolength{\SubsectionIndentWidth}{\ChapterExtraWidth}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:    \addtolength{\SubsectionIndentWidth}{\SectionExtraWidth}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:    \setlength{\SubsectionLabelWidth}{3.2em}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:    \addtolength{\SubsectionLabelWidth}{\SubsectionExtraWidth}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:    \addtolength{\SubsectionLabelWidth}{-\ChapterExtraWidth}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:    \@dottedtocline{2}{\SubsectionIndentWidth}{\SubsectionLabelWidth}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\setlength{\SubsubsectionIndentWidth}{7.0em}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\addtolength{\SubsubsectionIndentWidth}{\ChapterExtraWidth}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\addtolength{\SubsubsectionIndentWidth}{\SectionExtraWidth}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\addtolength{\SubsubsectionIndentWidth}{\SubsectionExtraWidth}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\setlength{\SubsubsectionLabelWidth}{4.1em}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:\addtolength{\SubsubsectionLabelWidth}{-\ChapterExtraWidth}%
+/usr/share/texmf-texlive/tex/latex/mentis/mentis.cls:    \@dottedtocline{3}{\SubsubsectionIndentWidth}{\SubsubsectionLabelWidth}%
+/usr/share/texmf-texlive/tex/latex/psnfssx/lucidabr.sty:\DeclareMathSymbol{\Subset}{\mathrel}{symbols}{248}
+/usr/share/texmf-texlive/tex/latex/psnfssx/luctime.sty:\DeclareMathSymbol{\Subset}{\mathrel}{symbols}{248}
+/usr/share/texmf-texlive/tex/latex/psnfssx/lucmin.sty:\DeclareMathSymbol{\Subset}{\mathrel}{symbols}{248}
+/usr/share/texmf-texlive/tex/latex/psnfssx/lucbmath.sty:\DeclareMathSymbol{\Subset}{\mathrel}{symbols}{248}
+/usr/share/texmf-texlive/tex/latex/psnfssx/lucmtime.sty:\DeclareMathSymbol{\Subset}{\mathrel}{symbols}{248}
+/usr/share/texmf-texlive/tex/latex/smflatex/smfart.cls:\def\Subsection{\@startsection{subsection}{2}%
+/usr/share/texmf-texlive/tex/latex/smflatex/smfart.cls:\def\Subsubsection{\@startsection{subsubsection}{3}%
+/usr/share/texmf-texlive/tex/latex/smflatex/smfbook.cls:\def\Subsection{\@startsection{subsection}{2}%
+/usr/share/texmf-texlive/tex/latex/smflatex/smfbook.cls:\def\Subsubsection{\@startsection{subsubsection}{3}%
+/usr/share/texmf-texlive/tex/latex/ucs/data/uni-34.def:\uc@dclc{8912}{default}{\ensuremath\Subset}%
+/usr/share/texmf-texlive/tex/latex/mathdesign/mdput/mdput.sty:    \MD@def\DeclareMathSymbol{\Subset}       {\mathrel}{mathdesignA}{"E2}
+/usr/share/texmf-texlive/tex/latex/mathdesign/mdbch/mdbch.sty:    \MD@def\DeclareMathSymbol{\Subset}       {\mathrel}{mathdesignA}{"E2}
+/usr/share/texmf-texlive/tex/latex/mathdesign/mdugm/mdugm.sty:    \MD@def\DeclareMathSymbol{\Subset}       {\mathrel}{mathdesignA}{"E2}
+/usr/share/texmf-texlive/tex/latex/objectz/oz.sty:\DeclareMathSymbol\Subset{\mathrel}{AMSa}{"62}
+/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty:\DeclareMathSymbol{\Subset}       {\mathrel}{AMSa}{"62}
+/usr/share/texmf-texlive/tex/latex/zed-csp/zed-csp.sty:  \DeclareMathSymbol\Subset{\mathrel}{AMSa}{"62}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmss/m/it}    {T5/cmss/m/sl}{}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmss/m/sc}    {T5/cmr/m/sc}{}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmss/m/ui}    {T5/cmr/m/ui}{}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmr/bx/ui}    {T5/cmr/m/ui}{}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmss/bx/ui}   {T5/cmr/bx/ui}{}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmtt/bx/n}    {T5/cmtt/m/n}{}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmtt/bx/it}   {T5/cmtt/m/it}{}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmtt/bx/ui}   {T5/cmtt/m/it}{}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmfib/b/n}    {T5/cmfib/bx/n}   
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmr/b/it}     {T5/cmr/bx/it}   
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmr/b/sl}     {T5/cmr/bx/sl}   
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmss/b/n}     {T5/cmss/bx/n}   
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmr/b/ui}     {T5/cmr/bx/ui}    
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmss/b/ui}    {T5/cmss/bx/ui}   
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmtt/b/n}     {T5/cmtt/bx/n}    
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmtt/b/it}    {T5/cmtt/bx/it}   
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cmr.pfd:\SubstFont{T5/cmtt/b/ui}    {T5/cmtt/bx/ui}   
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmfib/b/n}        {T1/cmfib/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmr/b/it}         {T1/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmr/b/sl}         {T1/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmr/b/ui}         {T1/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmr/bx/ui}        {T1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmss/b/n}         {T1/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmss/b/ui}        {T1/cmss/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmss/bx/ui}       {T1/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmss/m/it}        {T1/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmss/m/sc}        {T1/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmss/m/ui}        {T1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmtt/b/it}        {T1/cmtt/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmtt/b/n}         {T1/cmtt/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmtt/b/ui}        {T1/cmtt/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmtt/bx/it}       {T1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmtt/bx/n}        {T1/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmtt/bx/ui}       {T1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t1lm.pfd:\SubstFont{T1/cmtt/m/ui}        {T1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmfib/b/n}       {OT1/cmfib/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmr/b/it}        {OT1/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmr/b/sl}        {OT1/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmr/b/ui}        {OT1/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmr/bx/ui}       {OT1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmss/b/n}        {OT1/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmss/b/ui}       {OT1/cmss/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmss/bx/ui}      {OT1/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmss/m/it}       {OT1/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmss/m/sc}       {OT1/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmss/m/ui}       {OT1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmtt/b/it}       {OT1/cmtt/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmtt/b/n}        {OT1/cmtt/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmtt/b/ui}       {OT1/cmtt/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmtt/bx/it}      {OT1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmtt/bx/n}       {OT1/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmtt/bx/ui}      {OT1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cm.pfd:\SubstFont{OT1/cmtt/m/ui}       {OT1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmfib/b/n}        {T5/cmfib/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmr/b/it}         {T5/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmr/b/sl}         {T5/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmr/b/ui}         {T5/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmr/bx/ui}        {T5/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmss/b/n}         {T5/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmss/b/ui}        {T5/cmss/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmss/bx/ui}       {T5/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmss/m/it}        {T5/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmss/m/sc}        {T5/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmss/m/ui}        {T5/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmtt/b/it}        {T5/cmtt/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmtt/b/n}         {T5/cmtt/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmtt/b/ui}        {T5/cmtt/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmtt/bx/it}       {T5/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmtt/bx/n}        {T5/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmtt/bx/ui}       {T5/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5lm.pfd:\SubstFont{T5/cmtt/m/ui}        {T5/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmfib/b/n}       {IL2/cmfib/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmr/b/it}        {IL2/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmr/b/sl}        {IL2/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmr/b/ui}        {IL2/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmr/bx/ui}       {IL2/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmss/b/n}        {IL2/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmss/b/ui}       {IL2/cmss/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmss/bx/ui}      {IL2/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmss/m/it}       {IL2/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmss/m/sc}       {IL2/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmss/m/ui}       {IL2/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmtt/b/it}       {IL2/cmtt/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmtt/b/n}        {IL2/cmtt/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmtt/b/ui}       {IL2/cmtt/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmtt/bx/it}      {IL2/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmtt/bx/n}       {IL2/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmtt/bx/ui}      {IL2/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cm.pfd:\SubstFont{IL2/cmtt/m/ui}       {IL2/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cmr.pfd:\SubstFont{OT1/cmr/bx/ui}    {OT1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cmr.pfd:\SubstFont{OT1/cmss/m/it}    {OT1/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cmr.pfd:\SubstFont{OT1/cmss/m/sc}    {OT1/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cmr.pfd:\SubstFont{OT1/cmss/m/ui}    {OT1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cmr.pfd:\SubstFont{OT1/cmss/bx/ui}   {OT1/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cmr.pfd:\SubstFont{OT1/cmtt/bx/n}    {OT1/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cmr.pfd:\SubstFont{OT1/cmtt/bx/it}   {OT1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot1cmr.pfd:\SubstFont{OT1/cmtt/bx/ui}   {OT1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmfib/b/n}        {QX/cmfib/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmr/b/it}         {QX/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmr/b/sl}         {QX/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmr/b/ui}         {QX/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmr/bx/ui}        {QX/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmss/b/n}         {QX/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmss/b/ui}        {QX/cmss/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmss/bx/ui}       {QX/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmss/m/it}        {QX/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmss/m/sc}        {QX/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmss/m/ui}        {QX/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmtt/b/it}        {QX/cmtt/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmtt/b/n}         {QX/cmtt/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmtt/b/ui}        {QX/cmtt/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmtt/bx/it}       {QX/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmtt/bx/n}        {QX/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmtt/bx/ui}       {QX/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/qxlm.pfd:\SubstFont{QX/cmtt/m/ui}        {QX/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/plnfss.tex:\def\SubstFont#1#2{
+/usr/share/texmf-texlive/tex/plain/plnfss/plnfss.tex:\def\LaTeXSubstFont#1^^A#2^^A{\SubstFont{#1}{#2}}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmfib/b/n}        {T5/cmfib/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmr/b/it}         {T5/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmr/b/sl}         {T5/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmr/b/ui}         {T5/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmr/bx/ui}        {T5/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmss/b/n}         {T5/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmss/b/ui}        {T5/cmss/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmss/bx/ui}       {T5/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmss/m/it}        {T5/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmss/m/sc}        {T5/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmss/m/ui}        {T5/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmtt/b/it}        {T5/cmtt/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmtt/b/n}         {T5/cmtt/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmtt/b/ui}        {T5/cmtt/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmtt/bx/it}       {T5/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmtt/bx/n}        {T5/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmtt/bx/ui}       {T5/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/t5cm.pfd:\SubstFont{T5/cmtt/m/ui}        {T5/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cmr.pfd:\SubstFont{IL2/cmr/b/it}        {IL2/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cmr.pfd:\SubstFont{IL2/cmr/b/sl}        {IL2/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/il2cmr.pfd:\SubstFont{IL2/cmss/b/n}        {IL2/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmfib/b/n}        {LY1/cmfib/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmr/b/it}         {LY1/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmr/b/sl}         {LY1/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmr/b/ui}         {LY1/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmr/bx/ui}        {LY1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmss/b/n}         {LY1/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmss/b/ui}        {LY1/cmss/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmss/bx/ui}       {LY1/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmss/m/it}        {LY1/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmss/m/sc}        {LY1/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmss/m/ui}        {LY1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmtt/b/it}        {LY1/cmtt/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmtt/b/n}         {LY1/cmtt/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmtt/b/ui}        {LY1/cmtt/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmtt/bx/it}       {LY1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmtt/bx/n}        {LY1/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmtt/bx/ui}       {LY1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ly1lm.pfd:\SubstFont{LY1/cmtt/m/ui}        {LY1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmfib/b/n}       {OT4/cmfib/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmr/b/it}        {OT4/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmr/b/sl}        {OT4/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmr/b/ui}        {OT4/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmr/bx/ui}       {OT4/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmss/b/n}        {OT4/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmss/b/ui}       {OT4/cmss/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmss/bx/ui}      {OT4/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmss/m/it}       {OT4/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmss/m/sc}       {OT4/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmss/m/ui}       {OT4/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmtt/b/it}       {OT4/cmtt/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmtt/b/n}        {OT4/cmtt/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmtt/b/ui}       {OT4/cmtt/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmtt/bx/it}      {OT4/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmtt/bx/n}       {OT4/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmtt/bx/ui}      {OT4/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ot4cm.pfd:\SubstFont{OT4/cmtt/m/ui}       {OT4/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmfib/b/n}        {TS1/cmfib/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmr/b/it}         {TS1/cmr/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmr/b/sl}         {TS1/cmr/bx/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmr/b/ui}         {TS1/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmr/bx/ui}        {TS1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmss/b/n}         {TS1/cmss/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmss/b/ui}        {TS1/cmss/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmss/bx/ui}       {TS1/cmr/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmss/m/it}        {TS1/cmss/m/sl}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmss/m/sc}        {TS1/cmr/m/sc}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmss/m/ui}        {TS1/cmr/m/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmtt/b/it}        {TS1/cmtt/bx/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmtt/b/n}         {TS1/cmtt/bx/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmtt/b/ui}        {TS1/cmtt/bx/ui}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmtt/bx/it}       {TS1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmtt/bx/n}        {TS1/cmtt/m/n}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmtt/bx/ui}       {TS1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/plnfss/ts1lm.pfd:\SubstFont{TS1/cmtt/m/ui}        {TS1/cmtt/m/it}
+/usr/share/texmf-texlive/tex/plain/vertex/restud.sty:   {\it \number\SectionNumber.\number\SubsectionNumber.\enspace #1\hfil}
+/usr/share/texmf-texlive/tex/plain/vertex/vertex.tex:\newcount\SubsectionNumber\SubsectionNumber=1
+/usr/share/texmf-texlive/tex/plain/vertex/vertex.tex:\def\Reset{\global\SectionNumber=1\global\SubsectionNumber=1
+/usr/share/texmf-texlive/tex/plain/vertex/vertex.tex:   \SubsectionNumber=0
+/usr/share/texmf-texlive/tex/plain/vertex/vertex.tex:   \SubsectionNumber=0
+/usr/share/texmf-texlive/tex/plain/vertex/jet.sty:   {\it \number\SectionNumber.\number\SubsectionNumber\enspace #1\hfil}
+/usr/share/texmf-texlive/tex/plain/vertex/aer.sty:   \SubsectionNumber=0\noindent
+/usr/share/texmf-texlive/tex/plain/vertex/aer.sty:   {\hfil\it \number\SectionNumber.\number\SubsectionNumber.\enspace #1\hfil}
+/usr/share/texmf-texlive/tex/plain/vertex/ecnmet.sty:   {\hfil \it \number\SectionNumber.\number\SubsectionNumber\enspace #1\hfil}
+/usr/share/texmf-texlive/tex/plain/vertex/jep.sty:   \SubsectionNumber=0
+/usr/share/texmf-texlive/tex/plain/amsfonts/amssym.tex:\newsymbol\Subset 1362
+/usr/share/texmf-texlive/tex/texsis/base/PhysRev.txs:   \edef\lab@l{\@chaptID\@sectID\SubsectionStyle{\the\subsectionnum}}%
+/usr/share/texmf-texlive/tex/texsis/base/PhysRev.txs:     \global\edef\SubsectionTitle{#1}%          % or nothing
+/usr/share/texmf-texlive/tex/texsis/base/PhysRev.txs:   \edef\lab@l{\SubsubsectionStyle{\the\subsubsectionnum}}% just the number
+/usr/share/texmf-texlive/tex/texsis/base/PhysRev.txs:     \global\edef\SubsectionTitle{#1}%          % or nothing
+/usr/share/texmf-texlive/tex/texsis/base/PhysRev.txs:   \def\SubsectionStyle##1{\LetterN{##1}}% subsections are UC letters
+/usr/share/texmf-texlive/tex/texsis/base/PhysRev.txs:   \def\SubsubsectionStyle##1{##1}%     % subsubsections are numbered
+/usr/share/texmf-texlive/tex/texsis/base/PhysRev.txs:   \def\SubsectionStyle##1{\LetterN{##1}}% subsections are UC letters
+/usr/share/texmf-texlive/tex/texsis/base/PhysRev.txs:   \def\SubsubsectionStyle##1{##1}%     % subsubsections are numbered
+/usr/share/texmf-texlive/tex/texsis/base/TXSsects.tex:  \edef\lab@l{\@chaptID\@sectID\SubsectionStyle{\the\subsectionnum}}%
+/usr/share/texmf-texlive/tex/texsis/base/TXSsects.tex:    \global\edef\SubsectionTitle{#1}%   % or nothing
+/usr/share/texmf-texlive/tex/texsis/base/TXSsects.tex:\def\SubsectionStyle#1{#1}                      % how to display number
+/usr/share/texmf-texlive/tex/texsis/base/TXSsects.tex:   \edef\lab@l{\@chaptID\@sectID\SubsectionStyle{\the\subsectionnum}.%%
+/usr/share/texmf-texlive/tex/texsis/base/TXSsects.tex:           \SubsubsectionStyle{\the\subsubsectionnum}}% for \label
+/usr/share/texmf-texlive/tex/texsis/base/TXSsects.tex:     \global\edef\SubsectionTitle{#1}%          % or nothing
+/usr/share/texmf-texlive/tex/texsis/base/TXSsects.tex:\def\SubsubsectionStyle#1{#1}   % how to display subsubsection number
+/usr/share/texmf-texlive/tex/fontinst/mathetx/msam.etx:   \comment{The symbol `$\Subset$'.}
