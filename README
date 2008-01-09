@@ -34,7 +34,8 @@ ted.dtx: single source for both documentations and package
 Version info
 ------------
 
-2007-12-09  v1.0    fisrt release
+2007-12-09  v1.0    first release
+2007-12-12  v1.01   trivial bug fix
 
 License
 -------

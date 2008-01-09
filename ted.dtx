@@ -29,11 +29,11 @@
 %<*package>
 % \fi
 % \ProvidesFile{ted.dtx}
-  [2007/12/09 v1.0 \space token list editor \space (mpg)]
+  [2007/12/12 v1.01 \space token list editor \space (mpg)]
 % \iffalse
 %</package>
 % \fi
-% \CheckSum{0}
+% \CheckSum{774}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -207,7 +207,7 @@ This is a generated file. See ted.dtx for license information.
 % optionel. Cette fois, l'usage est inversé par rapport à l'argument optionel
 % : c'est la cas d'une macro qui est le plus naturel. Pour un registre de
 % lexèmes, vous devez écrire le \cs{the} vous même : ainsi, votre \meta{entrée}
-% poourra être de la forme \cs{macro}, ou \cs{the}\cs{toksreg}, ou toute autre
+% pourra être de la forme \cs{macro}, ou \cs{the}\cs{toksreg}, ou toute autre
 % chose dont le 1-développement donne ce que vous voulez.
 %
 % La version avec deux étoiles a aussi pour but de vous épargner la peine
@@ -519,12 +519,12 @@ This is a generated file. See ted.dtx for license information.
 % The \cs{ted@encode} macro is the master macro for encoding. It only
 % initialise a few things and launches the two loops. We select one of the
 % tree stpes by \cs{let}-ing \cs{ted@do@normal} and \cs{ted@do@special} to
-% the appropriate action. Since all this is going to be done inside a group,
-% we can set the first loop as the ``default'' one, and do the selection only
-% for the second one.
+% the appropriate action.
 %    \begin{macrocode}
 \newcommand\ted@encode[1]{%
   \ted@list{}%
+  \let\ted@do@normal\ted@gobble@encloop
+  \let\ted@do@special\ted@scan@special
   \ted@encloop#1\ted@@end 
   \ted@toks{}%
   \let\ted@do@normal\ted@addtoks@encloop
@@ -632,14 +632,6 @@ This is a generated file. See ted.dtx for license information.
   \ted@list\expandafter{\the\ted@list#1 }}
 %    \end{macrocode}
 % \end{macro}
-%
-% Okay, we're done with the pre-scanning macros. Now, just don't forget to set
-% those as the default action for the encoding loop, as we mentionned
-% previously.
-%    \begin{macrocode}
-\let\ted@do@normal\ted@gobble@encloop
-\let\ted@do@special\ted@scan@special
-%    \end{macrocode}
 %
 % \subsubsection{Actually encoding}
 %

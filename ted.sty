@@ -11,7 +11,7 @@
 %% 
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesPackage{ted}
-  [2007/12/09 v1.0 \space token list editor \space (mpg)]
+  [2007/12/12 v1.01 \space token list editor \space (mpg)]
 \@ifdefinable\ted@toks{\newtoks\ted@toks}
 \@ifdefinable\ted@list{\let\ted@list\toks@}
 \@ifdefinable\ted@code{\let\ted@code\count@}
@@ -53,6 +53,8 @@
 \newcommand\ted@@active{\ted@@active@}
 \newcommand\ted@encode[1]{%
   \ted@list{}%
+  \let\ted@do@normal\ted@gobble@encloop
+  \let\ted@do@special\ted@scan@special
   \ted@encloop#1\ted@@end
   \ted@toks{}%
   \let\ted@do@normal\ted@addtoks@encloop
@@ -99,8 +101,6 @@
   \ted@encloop}
 \newcommand*\ted@addlist[1]{%
   \ted@list\expandafter{\the\ted@list#1 }}
-\let\ted@do@normal\ted@gobble@encloop
-\let\ted@do@special\ted@scan@special
 \newcommand\ted@addtoks@encloop[1]{%
   \ted@toks\expandafter{\the\ted@toks#1}%
   \ted@encloop}
