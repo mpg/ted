@@ -423,6 +423,7 @@ This is a generated file. See ted.dtx for license information.
 \@ifdefinable\ted@toks{\newtoks\ted@toks}
 \@ifdefinable\ted@list{\let\ted@list\toks@}
 \@ifdefinable\ted@code{\let\ted@code\count@}
+\@ifdefinable\ted@nocc{\newcount\ted@nocc}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -886,6 +887,7 @@ This is a generated file. See ted.dtx for license information.
     \else
       \expandafter\@firstofone
     \fi{%
+      \global\advance\ted@nocc\@ne
       \ted@add@toks{#1}\ted@subsmac@loop##2}}%
   \expandafter\ted@def@subsmac@\expandafter{\the\ted@toks}}
 %    \end{macrocode}
@@ -896,6 +898,7 @@ This is a generated file. See ted.dtx for license information.
 %    \begin{macrocode}
 \newcommand\ted@def@subsmac@[1]{%
   \def\ted@subsmac{%
+    \global\ted@nocc\z@
     \ted@toks\expandafter{\expandafter}%
     \expandafter\ted@subsmac@loop\the\ted@toks#1\ted@@end}}
 %    \end{macrocode}
