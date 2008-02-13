@@ -26,7 +26,7 @@ set showcmd
 set smartcase
 set suffixes=.aux,.pdf,.dvi,.ps,.bbl,.blg,.ind,.idx,.ilg,.inx,.out,.toc
 set tabstop=4
-set textwidth=80
+set textwidth=72
 set wildmenu
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
@@ -36,9 +36,9 @@ if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +1 ted.dtx
+badd +890 ted.dtx
 badd +1 test.tex
-badd +0 todo
+badd +12 todo
 args ted.dtx
 edit todo
 set splitbelow splitright
@@ -370,7 +370,7 @@ setlocal syntax=tex
 endif
 setlocal tabstop=2
 setlocal tags=
-setlocal textwidth=78
+setlocal textwidth=72
 setlocal thesaurus=
 setlocal nowinfixheight
 setlocal nowinfixwidth
@@ -384,6 +384,7 @@ normal! zt
 1
 normal! 0
 wincmd w
+3wincmd w
 exe '1resize ' . ((&lines * 24 + 25) / 51)
 exe 'vert 1resize ' . ((&columns * 80 + 80) / 161)
 exe '2resize ' . ((&lines * 24 + 25) / 51)
