@@ -88,10 +88,10 @@
 %   avec les catcodes{}. Josselin est un prénom bizarre.}{Joss}{Jean-Côme}
 % \showthe\tedout
 
-\Substitute{Joss est beau, {Joss } est intelligent, { Joss} aime bien jouer %
-  avec les catcodes{}. Josselin est un prénom bizarre.}{Joss}{Josselin}
-\showthe\tedout
-\showthe\tednb
+% \Substitute{Joss est beau, {Joss } est intelligent, { Joss} aime bien jouer %
+%   avec les catcodes{}. Josselin est un prénom bizarre.}{Joss}{Josselin}
+% \showthe\tedout
+% \showthe\tednb
 
 % \Substitute{ Paris{,} {cap{ital}e} {du} libre{.} }{a}{aa}
 % \showthe\tedout
@@ -113,16 +113,26 @@
 
 \begin{document}
 
-% ab\par
-% a\ShowTokens{abc}b\par
-% a\Substitute{abc}{b}{d}b\par
+ab\par
+a\ShowTokens{abc}b\par
+a\Substitute{abc}{b}{d}b\par
+\def\tedtest{\emph{(Sourit, hoche la tête ; attitude
+  bienveillante)} \underline{mais si} mais si \underline{ça nous
+  intéresse} cette histoire de carabine \tabularnewline}%
+\edef\tedtsp{\space\space}%
+a\Substitute*[\def\tedtest]{\tedtest}{ ;}{}b\par
+a\Substitute*[\def\tedtest]{\tedtest}{ :}{}b\par
+a\Substitute*[\def\tedtest]{\tedtest}{ ?}{}b\par
+a\Substitute*[\def\tedtest]{\tedtest}{ !}{}b\par
+a\Substitute**[\def\tedtest]{\tedtest}{\tedtsp}{\empty}b\par
+a\Substitute*{\tedtest}{ }{}b\par
 
 \nosanitize
 \begingroup \lccode`0`\%
 \lowercase{\endgroup \wlog{0vim0 tex_stylish}}
 \tracingmacros1
 \tracingassigns1
-%\tracingcommands1
+\tracingcommands1
 %\tracingifs1
 
 \tracingmacros0
