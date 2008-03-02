@@ -109,6 +109,10 @@
 % \test
 % \ShowTokens*{\the\tedout}
 
+% bug d'avant 1.05 : remplacer AA dans une liste finissant par A
+\Substitute{abcddcbaabcd}{dd}{d}
+\showthe\tedout
+
 %% end \Substitute
 
 \begin{document}

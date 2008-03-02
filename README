@@ -34,7 +34,11 @@ ted.dtx: single source for both documentations and package
 Version info
 ------------
 
-2007-12-09  v1.0    fisrt release
+2007-12-09  v1.0    First release.
+2007-12-12  v1.01   Fixed a stupid bug.
+2008-03-02  v1.05   - Fixed a serious bug when trying to substitute AA
+                    in a string ending with A. Removed a spurious space.
+                    - Added an occurence counter.
 
 License
 -------

@@ -30,11 +30,11 @@
 %<*package>
 % \fi
 % \ProvidesFile{ted.dtx}
-  [2008/02/12 v1.01+ \space a token list editor \space (mpg)]
+  [2008/03/02 v1.05 \space a token list editor \space (mpg)]
 % \iffalse
 %</package>
 % \fi
-% \CheckSum{0}
+% \CheckSum{797}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -229,6 +229,13 @@ This is a generated file. See ted.dtx for license information.
 % insérée entre chaque paire de lexèmes de l'\meta{entrée} : en
 % particulier elle n'est pas insérée au début ni à la fin. Par exemple,
 % |\Substitute{abc}{}{1}| placera |a1b1c| dans \cs{ted@toks}.
+% 
+% Enfin, il peut être utile de savoir qu'une fois que \cs{Substitute} a
+% fini son travail, le nombre de substitutions effectuées est accessible
+% dans le registre \cs{ted@count}. On peut ainsi s'en servir pour
+% compter, par exemple, le nombre d'espaces (donc approximativement de
+% mots) dans un texte, en faisant semblant d'opérer une substitution
+% dessus.
 %
 % \medskip
 % \DescribeMacro{\ShowTokens}
@@ -335,6 +342,11 @@ This is a generated file. See ted.dtx for license information.
 % of the \cs{input}, but not before the first one. For example,
 % \cs{Substitute}|{abc}{}{1}| puts |a1b1c| in \cs{ted@toks}.
 %
+% Finally, it may be usefull to know that, after \cs{Subsitute} finished
+% its job, it leaves the number of replaced occurences in the count
+% register \cs{ted@count}. This can be used, for example, to cout spaces
+% (hence words) in a text, by making a fake substitution on it.
+%
 % \medskip
 % \DescribeMacro{\ShowTokens}
 % The syntax of \cs{ShowTokens} is as follows.
@@ -435,7 +447,7 @@ This is a generated file. See ted.dtx for license information.
 \@ifdefinable\ted@toks{\newtoks\ted@toks}
 \@ifdefinable\ted@list{\let\ted@list\toks@}
 \@ifdefinable\ted@code{\let\ted@code\count@}
-\@ifdefinable\ted@nocc{\newcount\ted@nocc}
+\@ifdefinable\ted@count{\newcount\ted@count}
 %    \end{macrocode}
 % \end{macro}
 % \end{macro}
@@ -901,11 +913,13 @@ This is a generated file. See ted.dtx for license information.
   \expandafter##\expandafter1\the\ted@toks##2{%
     \ted@add@toks{##1}%
     \ifx##2\ted@@end 
-      \expandafter\@gobble
+      \expandafter\@firstoftwo
     \else
-      \expandafter\@firstofone
+      \expandafter\@secondoftwo
     \fi{%
-      \global\advance\ted@nocc\@ne
+      \expandafter\ted@remove@nil\the\ted@toks
+      }{%
+      \global\advance\ted@count\@ne
       \ted@add@toks{#1}\ted@subsmac@loop##2}}%
   \expandafter\ted@def@subsmac@\expandafter{\the\ted@toks}}
 %    \end{macrocode}
@@ -916,9 +930,20 @@ This is a generated file. See ted.dtx for license information.
 %    \begin{macrocode}
 \newcommand\ted@def@subsmac@[1]{%
   \def\ted@subsmac{%
-    \global\ted@nocc\z@
+    \global\ted@count\z@
     \ted@toks\expandafter{\expandafter}%
-    \expandafter\ted@subsmac@loop\the\ted@toks#1\ted@@end}}
+    \expandafter\ted@subsmac@loop\the\ted@toks\ted@@nil#1\ted@@end}}
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\ted@remove@nil}
+% You probably noticed the \cs{ted@@nil} after \cs{ted@toks} in the
+% above definition. This is to avoid problems while trying to
+% substitute something like ``AA'' in a list ending with ``A'' (new in
+% v1.05). We need to remove it when finished.
+%    \begin{macrocode}
+\@ifdefinable\ted@remove@nil{%
+  \long\def\ted@remove@nil#1\ted@@nil{%
+    \ted@toks{#1}}}
 %    \end{macrocode}
 % \end{macro}
 %
