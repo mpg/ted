@@ -1,6 +1,6 @@
 \documentclass{minimal}
 
-\usepackage{ted}
+\usepackage{ted, trace}
 
 \makeatletter
 \let\sptoken= \@sptoken
@@ -110,34 +110,26 @@
 % \ShowTokens*{\the\tedout}
 
 % bug d'avant 1.05 : remplacer AA dans une liste finissant par A
-\Substitute{abcddcbaabcd}{dd}{d}
-\showthe\tedout
+% \Substitute{abcddcbaabcd}{dd}{d}
+% \showthe\tedout
 
 %% end \Substitute
 
 \begin{document}
 
-ab\par
-a\ShowTokens{abc}b\par
-a\Substitute{abc}{b}{d}b\par
-\def\tedtest{\emph{(Sourit, hoche la tête ; attitude
-  bienveillante)} \underline{mais si} mais si \underline{ça nous
-  intéresse} cette histoire de carabine \tabularnewline}%
-\edef\tedtsp{\space\space}%
-a\Substitute*[\def\tedtest]{\tedtest}{ ;}{}b\par
-a\Substitute*[\def\tedtest]{\tedtest}{ :}{}b\par
-a\Substitute*[\def\tedtest]{\tedtest}{ ?}{}b\par
-a\Substitute*[\def\tedtest]{\tedtest}{ !}{}b\par
-a\Substitute**[\def\tedtest]{\tedtest}{\tedtsp}{\empty}b\par
-a\Substitute*{\tedtest}{ }{}b\par
+% ab\par
+% a\ShowTokens{abc}b\par
+% a\Substitute{abc}{b}{d}b\par
 
 \nosanitize
-\begingroup \lccode`0`\%
-\lowercase{\endgroup \wlog{0vim0 tex_stylish}}
+\wlog{\noexpand\makeatletter}
 \tracingmacros1
 \tracingassigns1
 \tracingcommands1
 %\tracingifs1
+
+\uccode`\+ 32
+\uppercase{\ShowTokens{+}}
 
 \tracingmacros0
 \tracingassigns0
