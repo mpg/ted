@@ -1,12 +1,14 @@
                             Choses à faire pour ted
                             -----------------------
 
-[ ] Ajouter un compteur d'occurence remplacées.
-
 [ ] Ajouter une commande genre \Transliterate (le tr unix)
 
 [ ] Ajouter la possibilité de ne remplacer que la première ou la dernière
 occurence.
 
 [ ] Faire une suite de tests cohérente.
+
+[ ] Ev incorporer des trucs du genre de xstring si c'est utile ?
+
+[ ] Regarder l'efficacité ? (Ouille, sans doute...)
 

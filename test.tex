@@ -2,6 +2,8 @@
 
 \usepackage{ted, trace}
 
+%% trucs utiles en vrac {{{
+
 \makeatletter
 \let\sptoken= \@sptoken
 \let\hashtoken=#
@@ -14,7 +16,7 @@
   #1}}
 \makeatother
 
-%% begin \Showtokens
+%% \ShowTokens {{{
 
 % \ShowTokens{abc123}
 % \ShowTokens{{}$&#^_ a0~b$\truc\relax}
@@ -33,14 +35,29 @@
 % \def\lol{aaaaaaa aaaaaaa aaaaaaaaa aaaaaaaaaaaaaa }
 % \ShowTokens{a\truc 1\lol 2}
 
+%% bug d'avant 1.6 : afficher des lexèmes (32, X) pour X différent de 10. {{{
+% \begingroup
+% \catcode`\< 1 \catcode`\> 2
+% \uccode`\< 32
+% \uccode`\> 32
+% \uccode`\$ 32
+% \uccode`\& 32
+% \uccode`\# 32
+% \uccode`\^ 32
+% \uccode`\_ 32
+% \uccode`\a 32
+% \uccode`\0 32
+% \uccode`\~ 32
+% \uppercase{\endgroup
+%   \ShowTokens{<>$&#^_ a0~b$\truc\relax}}
+
 % \Test
 % \ShowTokensLogonly
 % \ShowTokens{{}$&#^_ a0~b$\truc\relax}
 % \ShowTokensOnline
 % \Endtest
 
-%% end \ShowTokens
-%% begin empty
+%% Tests sur le vide {{{
 
 % \ShowTokens{}
 % \Substitute{}{a}{b}
@@ -50,8 +67,7 @@
 % \Substitute{abcdeblabla}{a}{}
 % \showthe\tedout
 
-%% end empty
-%% begin \Substitute
+%% \Substitute {{{
 
 % \Substitute{a c}{a}{1}
 % \ShowTokens*{\the\tedout}
@@ -113,8 +129,6 @@
 % \Substitute{abcddcbaabcd}{dd}{d}
 % \showthe\tedout
 
-%% end \Substitute
-
 \begin{document}
 
 % ab\par
@@ -128,8 +142,6 @@
 \tracingcommands1
 %\tracingifs1
 
-\uccode`\+ 32
-\uppercase{\ShowTokens{+}}
 
 \tracingmacros0
 \tracingassigns0
@@ -137,3 +149,5 @@
 \tracingifs0
 
 \stop
+
+% vim: set fdm=marker

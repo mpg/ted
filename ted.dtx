@@ -79,8 +79,6 @@ This is a generated file. See ted.dtx for license information.
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage[babel=true, expansion=false]{microtype}
-\usepackage[bookmarks=false, colorlinks=true,
-  linkcolor=black, urlcolor=black]{hyperref}
 \usepackage{fixltx2e}
 \expandafter\newif\csname iffrenchdoc\endcsname % cachez ce if...
 %<pilote>\frenchdoctrue
@@ -92,8 +90,12 @@ This is a generated file. See ted.dtx for license information.
 \usepackage[lmargin=4.5cm, rmargin=3cm]{geometry}
 \OnlyDescription
 \usepackage[english, french]{babel}
-\FrenchFootnotes
+\FrenchFootnotes \AddThinSpaceBeforeFootnotes
 \newcommand*\eng[1]{\emph{\foreignlanguage{english}{#1}}}
+\usepackage[bookmarks=false]{hyperref}
+\hypersetup{%
+  pdftitle=L'extension ted
+  pdfsubject=Un éditeur de liste de lexèmes pour LaTeX2e}
 %</pilote>
 %<*gobble>
 \else
@@ -101,16 +103,31 @@ This is a generated file. See ted.dtx for license information.
 %<*driver>
 \AlsoImplementation
 \usepackage[english]{babel}
+\usepackage[bookmarks=true, bookmarksnumbered=true, bookmarksopen=true,
+  bookmarksopenlevel=2]{hyperref}
+\hypersetup{%
+  pdftitle=The ted package,
+  pdfsubject=A token list editor for LaTex2e}
+\settowidth\MacroIndent{\rmfamily\scriptsize 000\ }
+\setlength\MacroTopsep{0pt}
+\setcounter{tocdepth}{1}
+\usepackage[nohints, english]{minitoc}
+\mtcsetrules{secttoc}{off}
+\mtcsetdepth{secttoc}{3}
+\newcommand\tocwithmini{%
+  \dosecttoc[n]
+  \setcounter{tocdepth}{1}\tableofcontents
+  \setcounter{tocdepth}{4}\faketableofcontents
+  }
 %</driver>
 %<*gobble>
 \fi
 %</gobble>
 %<*driver|pilote>
+\hypersetup{%
+  colorlinks=true, linkcolor=black, urlcolor=black,
+  pdfauthor=Manuel Pégourié-Gonnard}
 \newcommand\pf{\textsf}
-\setcounter{tocdepth}{1}
-\renewcommand\thesubsubsection{\alph{subsubsection}}
-\settowidth\MacroIndent{\rmfamily\scriptsize 000\ }
-\setlength\MacroTopsep{0pt}
 \begin{document}
   \DocInput{ted.dtx}
 \end{document}
@@ -126,7 +143,7 @@ This is a generated file. See ted.dtx for license information.
 % \date{\fileversion\ (\filedate)}
 %
 % \maketitle
-% \iffrenchdoc\else \tableofcontents \fi
+% \iffrenchdoc\else \tocwithmini \fi
 %
 % \section{Introduction}
 %
@@ -429,14 +446,7 @@ This is a generated file. See ted.dtx for license information.
 % the substitution part uses a macro with delimited argument, defined on
 % the fly, using an idea of Jean-Côme Charpentier.
 %
-% The code is divided as follows. 
-% \begin{enumerate} \setlength\itemsep{0pt}%
-%   \item Encoding  -- (a) pre-scan (b) encode
-%   \item Decoding
-%   \item Substitution
-%   \item Screen display for \cs{ShowTokens}
-%   \item Definition of the user commands
-% \end{enumerate}
+% The code is divided as follows. \secttoc
 %
 % \begin{macro}{\ted@toks}
 % \begin{macro}{\ted@list}
@@ -968,39 +978,18 @@ This is a generated file. See ted.dtx for license information.
 % encoded tokens one by one. We detect control sequences the same way as
 % in pre-scanning. For our tests (and also for use in
 % \cs{ted@show@toks@}) we embed |#1| into \cs{ted@toks} in order to
-% nest the \cs{if}s without fear.
+% nest the \cs{if}s without fear. There are four cases that need to be
+% typeset in different ways : active character, CS that represent a
+% special token, normal CS, normal character token. However, we need to
+% do one more test to detect the character tokens whose charcode is
+% $32$, before we apply \cs{string} to it in order to check if it was a
+% control sequence.
 %    \begin{macrocode}
 \count@\catcode\z@ \catcode\z@ 12
 \newcommand\ted@show@toks[1]{%
   \ted@toks{#1}\expandafter
   \ifx\the\ted@toks\ted@@end \else\expandafter
     \ifx\the\ted@toks\ted@@active
-      \aftergroup\ted@type@active
-      \expandafter\aftergroup\the\ted@toks
-    \else
-      \expandafter\expandafter\expandafter\ted@show@toks@
-      \expandafter\string\the\ted@toks\@nil
-    \fi
-    \ted@show@toks
-  \fi}
-\catcode\z@\count@
-%    \end{macrocode}
-% \end{macro}
-% \begin{macro}{\ted@show@toks@}
-% We stored the current token so that it can be used in the next macro,
-% though previously broken by the \cs{string}, and moreover we can nest
-% the \cs{if}s freely since it is hidden in a register (in case it would
-% be a \cs{if} itself). The four cases are : CS representing a special
-% token, normal CS, active character (since we cannot show its category
-% with \cs{meaning}), and finally normal character token.
-%    \begin{macrocode}
-\@ifdefinable\ted@show@toks@{%
-  \long\def\ted@show@toks@#1#2\@nil{%
-    \expandafter\endgroup
-    \ifnum`#1=\escapechar
-      \expandafter\ifx\the\ted@toks\ted@@special
-        \ted@show@special#2\@nil
-      \else
 %    \end{macrocode}
 % It's time to think about the following: we are inside a group where
 % all active characters were redefined, but we nonetheless want to
@@ -1009,6 +998,35 @@ This is a generated file. See ted.dtx for license information.
 % \cs{aftergroup} (with specialized macro for displaying each kind of
 % token).
 %    \begin{macrocode}
+      \aftergroup\ted@type@active
+      \expandafter\aftergroup\the\ted@toks
+    \else
+      \if\expandafter\noexpand\the\ted@toks\@sptoken
+        \aftergroup\ted@type@normal
+        \expandafter\aftergroup\the\ted@toks
+      \else
+        \begingroup
+        \escapechar\if\noexpand#1^^00 \@ne \else \z@ \fi
+        \expandafter\expandafter\expandafter\ted@show@toks@
+        \expandafter\string\the\ted@toks\@nil
+      \fi
+    \fi
+    \expandafter\ted@show@toks
+  \fi}
+\catcode\z@\count@
+%    \end{macrocode}
+% \end{macro}
+% \begin{macro}{\ted@show@toks@}
+% Now test the remaining cases : special CS, normal CS, or normal
+% character. 
+%    \begin{macrocode}
+\@ifdefinable\ted@show@toks@{%
+  \long\def\ted@show@toks@#1#2\@nil{%
+    \expandafter\endgroup
+    \ifnum`#1=\escapechar
+      \expandafter\ifx\the\ted@toks\ted@@special
+        \ted@show@special#2\@nil
+      \else
         \aftergroup\ted@type@cs
         \expandafter\aftergroup\the\ted@toks
       \fi
