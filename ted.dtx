@@ -34,7 +34,7 @@
 % \iffalse
 %</package>
 % \fi
-% \CheckSum{797}
+% \CheckSum{0}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -966,16 +966,23 @@ This is a generated file. See ted.dtx for license information.
 % \begin{macro}{\ted@show@toks}
 % Then we proceed, allmost like decoding, iteratively, processing the
 % encoded tokens one by one. We detect control sequences the same way as
-% in pre-scanning.
+% in pre-scanning. For our tests (and also for use in
+% \cs{ted@show@toks@}) we embed |#1| into \cs{ted@toks} in order to
+% nest the \cs{if}s without fear.
 %    \begin{macrocode}
 \count@\catcode\z@ \catcode\z@ 12
 \newcommand\ted@show@toks[1]{%
-  \ifx#1\ted@@end \expandafter\@gobble\else\expandafter\@firstofone\fi{%
-    \ted@toks{#1}%
-    \begingroup 
-    \escapechar\if\noexpand#1^^00 \@ne \else \z@ \fi
-    \expandafter\ted@show@toks@\string#1\@nil
-    \ted@show@toks}}
+  \ted@toks{#1}\expandafter
+  \ifx\the\ted@toks\ted@@end \else\expandafter
+    \ifx\the\ted@toks\ted@@active
+      \aftergroup\ted@type@active
+      \expandafter\aftergroup\the\ted@toks
+    \else
+      \expandafter\expandafter\expandafter\ted@show@toks@
+      \expandafter\string\the\ted@toks\@nil
+    \fi
+    \ted@show@toks
+  \fi}
 \catcode\z@\count@
 %    \end{macrocode}
 % \end{macro}
@@ -1005,14 +1012,9 @@ This is a generated file. See ted.dtx for license information.
         \aftergroup\ted@type@cs
         \expandafter\aftergroup\the\ted@toks
       \fi
-    \else \expandafter
-      \ifx\the\ted@toks\ted@@active
-        \aftergroup\ted@type@active
-        \expandafter\aftergroup\the\ted@toks
-      \else
-        \aftergroup\ted@type@normal
-        \expandafter\aftergroup\the\ted@toks
-      \fi
+    \else
+      \aftergroup\ted@type@normal
+      \expandafter\aftergroup\the\ted@toks
     \fi}}
 %    \end{macrocode}
 % \end{macro}
