@@ -9,7 +9,7 @@ Presentation
 ------------
 
 Just like sed is a stream editor, ted is a token list editor.  Actually, it is
-not as powerfull as sed, but its main feature is that it really works with
+not as powerful as sed, but its main feature is that it really works with
 tokens, not only characters.
 
 The ted package provides two user macros: \Substitute and \ShowTokens. The first
@@ -26,8 +26,8 @@ Contents
 --------
 
 ted.sty: the package itself
-ted.pdf: the (english) documentation and commented code
-ted-fr.pdf: the french documentation
+ted.pdf: the (English) documentation and commented code
+ted-fr.pdf: the French documentation
 
 ted.dtx: single source for both documentations and package
 
@@ -36,9 +36,11 @@ Version info
 
 2007-12-09  v1.0    First release.
 2007-12-12  v1.01   Fixed a stupid bug.
-2008-03-02  v1.05   - Fixed a serious bug when trying to substitute AA
-                    in a string ending with A. Removed a spurious space.
-                    - Added an occurence counter.
+2008-03-02  v1.05   - Fixed a bug when trying to substitute AA in a
+                    string ending with A. Also removed a spurious space.
+                    - Added an occurrence counter.
+2008-03-07  v1.06   - Fixed a bug in \ShowTokens with active spaces.
+                    - Slightly expanded the doc (examples).
 
 License
 -------

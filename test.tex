@@ -19,7 +19,7 @@
 %% \ShowTokens {{{
 
 % \ShowTokens{abc123}
-% \ShowTokens{{}$&#^_ a0~b$\truc\relax}
+\ShowTokens{{}$&#^_ a0~b$\truc\relax}
 % { \let~=#%
 %   \ShowTokens{a\ifx b\bgroup c\sptoken d\egroup e\hashtoken f~g\par}
 %   }
@@ -128,6 +128,12 @@
 % bug d'avant 1.05 : remplacer AA dans une liste finissant par A
 % \Substitute{abcddcbaabcd}{dd}{d}
 % \showthe\tedout
+
+%% Exemples de la doc {{{
+
+% \begingroup \uccode`\~=32 \uppercase{\endgroup
+%   \def\macro{1~2}}
+% \ShowTokens*{\macro}
 
 \begin{document}
 

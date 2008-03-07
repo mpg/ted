@@ -30,11 +30,11 @@
 %<*package>
 % \fi
 % \ProvidesFile{ted.dtx}
-  [2008/03/02 v1.05 \space a token list editor \space (mpg)]
+  [2008/03/07 v1.06 \space a token list editor \space (mpg)]
 % \iffalse
 %</package>
 % \fi
-% \CheckSum{0}
+% \CheckSum{816}
 % \CharacterTable
 %  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -112,12 +112,15 @@ This is a generated file. See ted.dtx for license information.
 \setlength\MacroTopsep{0pt}
 \setcounter{tocdepth}{1}
 \usepackage[nohints, english]{minitoc}
+\mtcsetpagenumbers{secttoc}{off}
 \mtcsetrules{secttoc}{off}
 \mtcsetdepth{secttoc}{3}
+\setlength{\stcindent}{0pt}
+\mtcsetfont{secttoc}{subsection}{\normalfont}
 \newcommand\tocwithmini{%
   \dosecttoc[n]
   \setcounter{tocdepth}{1}\tableofcontents
-  \setcounter{tocdepth}{4}\faketableofcontents
+  \setcounter{tocdepth}{3}\faketableofcontents
   }
 %</driver>
 %<*gobble>
@@ -128,6 +131,8 @@ This is a generated file. See ted.dtx for license information.
   colorlinks=true, linkcolor=black, urlcolor=black,
   pdfauthor=Manuel Pégourié-Gonnard}
 \newcommand\pf{\textsf}
+\newcommand\optstar{\meta{$*$}}
+\newcommand\topcs[1]{\texorpdfstring{\cs{#1}}{#1}}
 \begin{document}
   \DocInput{ted.dtx}
 \end{document}
@@ -165,11 +170,11 @@ This is a generated file. See ted.dtx for license information.
 % \else
 %
 % Just like \texttt{sed} is a stream editor, \pf{ted} is a token list
-% editor.  Actually, it is not as powerfull as \texttt{sed}, but its
+% editor.  Actually, it is not as powerful as \texttt{sed}, but its
 % main feature is that it really works with tokens, not only characters.
 % At the moment, it can do only two things with token lists: display it
 % with full information on each token, and perform substitutions (that
-% is, replacing every occurence of a sublist with another token list).
+% is, replacing every occurrence of a sublist with another token list).
 %
 % The \pf{ted} package can perform substitutions inside groups, and
 % don't forbid any token in the lists. Actually, \pf{ted} is designed to
@@ -191,14 +196,15 @@ This is a generated file. See ted.dtx for license information.
 % pense qu'elle peut être utile, soit pour déboguer du code, soit pour
 % apprendre \TeX.
 %
-% \medskip
+% \subsection{\topcs{Substitute}}
+%
 % \DescribeMacro{\Substitute}
 % La syntaxe de \cs{Substitute} est la suivante.
 % \begin{quote}
-% \cs{Substitute}\meta{*}\oarg{sortie}\marg{entrée}\marg{de}\marg{vers}
+% \cs{Substitute}\optstar\oarg{sortie}\marg{entrée}\marg{de}\marg{vers}
 % \end{quote}
 % Commençons par l'usage le plus simple : sans étoile ni argument
-% optionel. Sous cette forme, \cs{Substitute} remplace chaque occurence
+% optionel. Sous cette forme, \cs{Substitute} remplace chaque occurrence
 % de la sous-liste \meta{de} par \meta{vers} dans l'\meta{entrée}, et
 % place le résultat dans le registre à lexèmes \cs{ted@toks}. Comme
 % \cs{Substitute} est sans doute destiné à être utilisé par des auteurs
@@ -206,29 +212,42 @@ This is a generated file. See ted.dtx for license information.
 % devrait pas poser de problèmes la plupart du temps.
 %
 % Quoi qu'il en soit, vous pouvez changer facilement le nom du registre
-% utilisé pour la sortie avec l'argument optionel en spécifiant le nom
+% utilisé pour la sortie avec l'argument optionnel en spécifiant le nom
 % d'un registre à lexèmes dans \meta{sortie}. En fait, vous voulez
 % peut-être que la sortie soit placée dans une macro et non un registre
 % : dans ce cas, vous pouvez spécifier par exemple \cs{def}\cs{macro}
-% (ou \cs{long}\cs{def}\cs{macro} etc.) comme argument optionel. Dans
+% (ou \cs{long}\cs{def}\cs{macro} etc.) comme argument optionnel. Dans
 % tous les cas, \meta{sortie}|{trucs}| doit être une syntaxe légale
 % d'affectation de |truc| dans la sortie. Bien sûr, si vous demandez à
 % ce que la sortie soit placée dans une macro, vous devez veiller à ce
 % qu'elle ne contienne pas de dièses (caractère de paramètre) mal
-% placés.
+% placés. Exemples :
+%
+% \begin{quote}
+% |\Substitute{a#b#c}{a}{A}|\\
+% |\newtoks\vostoks \Substitute[\vostoks]{a#b#c}{a}{A}|\\
+% |\Substitute[\def\votremacro]{a#b#c}{#}{##}|
+% \end{quote}
 %
 % La version étoilée de \cs{Substitute} a pour but de vous simplifier la
 % vie quand vous ne voulez pas spécifier explicitement une liste de
 % lexèmes en entrée, mais plutôt utiliser le contenu d'une macro ou d'un
-% registre, en développant une fois son premeir argument obligatoire
-% avant de commancer à travailler dessus. Ceci vous évite d'avoir à
+% registre, en développant une fois son premier argument obligatoire
+% avant de commencer à travailler dessus. Ceci vous évite d'avoir à
 % placer vous-même des \cs{expandafter}, surtout dans le cas ou vous
-% souhaitez utiliser l'argument optionel. Cette fois, l'usage est
-% inversé par rapport à l'argument optionel : c'est la cas d'une macro
+% souhaitez utiliser l'argument optionnel. Cette fois, l'usage est
+% inversé par rapport à l'argument optionnel : c'est la cas d'une macro
 % qui est le plus naturel. Pour un registre de lexèmes, vous devez
 % écrire le \cs{the} vous même : ainsi, votre \meta{entrée} pourra être
 % de la forme \cs{macro}, ou \cs{the}\cs{toksreg}, ou toute autre chose
-% dont le 1-développement donne ce que vous voulez.
+% dont le 1-développement donne ce que vous voulez. Par exemple :
+%
+% \begin{quote}
+% |\def\abc{abccdef} \newtoks\abctoks \abctoks{abc}|\\
+% |\Substitute{\abc}{cc}{C} %| donne |\abc|\\
+% |\Substitute*{\abc}{cc}{C} %| donne |abCdef|\\
+% |\Substitute*{\the\abctoks}{cc}{C} %| aussi
+% \end{quote}
 %
 % La version avec deux étoiles a aussi pour but de vous épargner la
 % peine de contrôler vous-même le développement des arguments. Elle
@@ -240,7 +259,7 @@ This is a generated file. See ted.dtx for license information.
 % usage courants. Pour une gestion plus souple du développement des
 % arguments, attendez \LaTeX$3$ !
 %
-% Le comportement de \cs{Substitute} devrait être évident la pluart du
+% Le comportement de \cs{Substitute} devrait être évident la plupart du
 % temps. Seul un cas particulier mérite sans doute une petite remarque :
 % dans le cas ou la liste \meta{de} est vide, la liste \meta{vers} est
 % insérée entre chaque paire de lexèmes de l'\meta{entrée} : en
@@ -254,20 +273,42 @@ This is a generated file. See ted.dtx for license information.
 % mots) dans un texte, en faisant semblant d'opérer une substitution
 % dessus.
 %
-% \medskip
+% \subsection{\topcs{ShowTokens}}
+%
 % \DescribeMacro{\ShowTokens}
 % La syntaxe de \cs{ShowTokens} est la suivante.
 % \begin{quote}
-% \cs{ShowTokens}\meta{*}\marg{liste}
+% \cs{ShowTokens}\optstar\marg{liste}
 % \end{quote}
 % Dans sa forme simple, \cs{ShowTokens} se contente d'afficher la liste
 % de lexèmes, un par ligne. Pour les lexèmes de type caractère,
 % l'affichage comporte le caractère lui-même, suivi de l'indication de
-% son code de catégorie sous forme parlante (comme |blank space|,
-% |letter|, etc.). Pour les séquence de contrôles et les caractères
-% actifs, le (début du) \cs{meaning} est également affiché, sans
-% dépasser les~$80$ colonnes de large afin de ne pas perturber
-% l'affichage par ligne.
+% son code de catégorie sous la forme utilisée par \cs{show}.  Je
+% rappelle ci-dessous (table~\ref{cc}) pour la commodité du lecteur les
+% différents \cs{catcode}s possibles dans une liste de lexème, ainsi
+% qu'un exemple et la façon dont ils sont affichés par \cs{ShowTokens}.
+%
+% \begin{table}
+% \begin{tabular}{rcl}
+% 1  & |{| & |(begin-group character {)|\\
+% 2  & |}| & |(end-group character })|\\
+% 3  & |$| & |(math shift character $)|\\
+% 4  & |&| & |(alignment tab character &)|\\
+% 6  & |#| & |(macro parameter character #)|\\
+% 7  & |^| & |(superscript character ^)|\\
+% 8  & |_| & |(subscript character _)|\\
+% 10 & | | & |(blank space  )|\\
+% 11 & |a| & |(the letter a)|\\
+% 12 & |0| & |(the character 0)|\\
+% 13 & |~| & |(active character=macro:->\nobreakspace {})|\\
+% \end{tabular}
+% \caption{Les \cs{catcode} : code, exemple, et description.}\label{cc}
+% \end{table}
+% 
+% Pour les séquence de contrôles et les caractères actifs, le (début du)
+% \cs{meaning} est également affiché, sans dépasser les~$80$ colonnes de
+% large afin de ne pas perturber l'affichage par ligne. Il s'agit bien
+% sûr du sens courant au moment de l'appel à \cs{ShowTokens}.
 % 
 % \DescribeMacro{\ShowTokensLogonly} \DescribeMacro{\ShowTokensOnline}
 % Le comportement par défaut est d'afficher ces listes à la fois sur le
@@ -279,8 +320,19 @@ This is a generated file. See ted.dtx for license information.
 % La version étoilée de \cs{ShowTokens} fonctionne de la même façon que
 % dans le cas de \cs{Substitute} en développant son argument une fois
 % avant d'en commencer l'analyse. La même remarque que précédemment
-% s'applique concernant les macros et les registres.
+% s'applique concernant les macros et les registres. Imaginons par
+% exemple que vous vouliez vérifier, après la définition d'une macro,
+% que vous avez bien les bons \cs{catcode}s :
 %
+% \begin{quote}
+% |\begingroup \uccode`\~=32 \uppercase{\endgroup|\\
+% |  \def\macro{1~2}}|\\
+% |\ShowTokens*{\macro} %| donne à l'écran : [...]\\
+% |1 (the character 1)|\\
+% |  (active character=macro:-> )|\\
+% |2 (the character 2)|
+% \end{quote}
+% 
 % \medskip
 % J'aimerais conclure par la remarque suivante : au cours de la
 % conception de \pf{ted}, j'ai vraiment essayé de ne faire aucune
@@ -289,8 +341,8 @@ This is a generated file. See ted.dtx for license information.
 % \cs{par}, des \cs{if}s, des \cs{bgroup} ou \cs{egroup} dans toutes les
 % listes de lexèmes. À ma connaissance à ce jour, la seule limitation
 % est que les séquences de contrôle qui apparaissent ne doivent pas être
-% (ou être \cs{let}-égales à) certaines des macros intimes de \pf{ted},
-% commençant par \cs{ted@@}.
+% (ou être \cs{let}-égales à) des macros intimes de \pf{ted},
+% c'est-à-dire celles commençant par \cs{ted@@}.
 %
 % \begin{quote}
 % Vous savez maintenant tout ce qu'il y a à savoir sur l'utilisation de
@@ -308,18 +360,19 @@ This is a generated file. See ted.dtx for license information.
 %
 % The \pf{ted} package provides two user macros: \cs{Substitute} and
 % \cs{ShowTokens}. The first one is the primary goal of the package, but
-% to be able to do the second was the more difficult and interesting
-% part while writing the package. I made it into a user macro since I
-% believe it can be useful for debugging things, or for learning \TeX.
+% to be able to do the second was the more interesting part while
+% writing the package. I made it into a user macro since I believe it
+% can be useful for debugging things, or for learning \TeX.
 %
-% \medskip
+% \subsection{\topcs{Substitute}}
+%
 % \DescribeMacro{\Substitute}
 % The syntax of \cs{Substitute} is as follows.
 % \begin{quote}
-% \cs{Substitute}\meta{*}\oarg{output}\marg{input}\marg{from}\marg{to}
+% \cs{Substitute}\optstar\oarg{output}\marg{input}\marg{from}\marg{to}
 % \end{quote}
 % Let's begin with the basics. Without star or optional argument, the
-% \cs{Substitute} macro will replace each occurence of the \meta{from}
+% \cs{Substitute} macro will replace each occurrence of the \meta{from}
 % token list with \marg{to} in the \meta{input}, and put the result in
 % the \cs{toks} register \cs{ted@toks}. This macro has a |@| in its
 % name, but since I think the \cs{Substitute} macro will be essentially
@@ -333,7 +386,13 @@ This is a generated file. See ted.dtx for license information.
 % must be a legal syntax for an assignment: using \cs{macro} as optional
 % argument will not work (and may actually result in chaos). Of course,
 % if you want your output to be placed in a macro, it should not contain
-% unproperly placed hash signs (that is, macro parameter tokens).
+% improperly placed hash signs (that is, macro parameter tokens). 
+%
+% \begin{quote}
+% |\Substitute{a#b#c}{a}{A}|\\
+% |\newtoks\yourtoks \Substitute[\yourtoks]{a#b#c}{a}{A}|\\
+% |\Substitute[\def\yourmacro]{a#b#c}{#}{##}|
+% \end{quote}
 %
 % The one-starred form of \cs{Substitute} is meant to help you when your
 % \meta{input} is not an explicit token list, but the contents of either
@@ -346,9 +405,16 @@ This is a generated file. See ted.dtx for license information.
 % or \cs{the}\cs{toksreg}, or anything whose one-time expansion is the
 % token list you want \cs{Substitute} to act upon.
 %
+% \begin{quote}
+% |\def\abc{abccdef} \newtoks\abctoks \abctoks{abc}|\\
+% |\Substitute{\abc}{cc}{C} %| gives |\abc|\\
+% |\Substitute*{\abc}{cc}{C} %| gives |abCdef|\\
+% |\Substitute*{\the\abctoks}{cc}{C} %| too
+% \end{quote}
+%
 % The two-starred form is also meant to avoid you trouble with
 % development. It expands its three mandatory arguments once before
-% executiing. The remark about macros and \cs{toks} register still
+% executing. The remark about macros and \cs{toks} register still
 % holds. I hope this three cases (from zero to two stars) will suffice
 % for most purpose. For a better handling of arguments expansion, wait
 % for \LaTeX$3$!
@@ -359,22 +425,45 @@ This is a generated file. See ted.dtx for license information.
 % of the \cs{input}, but not before the first one. For example,
 % \cs{Substitute}|{abc}{}{1}| puts |a1b1c| in \cs{ted@toks}.
 %
-% Finally, it may be usefull to know that, after \cs{Subsitute} finished
-% its job, it leaves the number of replaced occurences in the count
-% register \cs{ted@count}. This can be used, for example, to cout spaces
-% (hence words) in a text, by making a fake substitution on it.
+% Finally, it may be useful to know that, after \cs{Subsitute} finished
+% its job, it leaves the number of replaced occurrences in the count
+% register \cs{ted@count}. This can be used, for example, to count
+% spaces (hence words) in a text, by making a fake substitution on it.
 %
-% \medskip
+% \subsection{\topcs{ShowTokens}}
+%
 % \DescribeMacro{\ShowTokens}
 % The syntax of \cs{ShowTokens} is as follows.
 % \begin{quote}
-% \cs{ShowTokens}\meta{*}\marg{list}
+% \cs{ShowTokens}\optstar\marg{list}
 % \end{quote}
 % In its simple form, \cs{ShowTokens} just shows the list, one token per
 % line.  For characters tokens, its prints the character, and its
-% category code in human-friedly form (such as ``blank space'',
-% ``letter'', etc.). For control sequences and active characters, it
-% also prints (the beginning of) their current \cs{meaning} as a bonus.
+% category code in human-friendly form. For the sake of readability,
+% here is (table~\ref{cc}) a reminder of the possible \cs{catcode}s,
+% with an exemple and the way \cs{ShowTokens} displays them.
+%
+% \begin{table}
+% \begin{tabular}{rcl}
+% 1  & |{| & |(begin-group character {)|\\
+% 2  & |}| & |(end-group character })|\\
+% 3  & |$| & |(math shift character $)|\\
+% 4  & |&| & |(alignment tab character &)|\\
+% 6  & |#| & |(macro parameter character #)|\\
+% 7  & |^| & |(superscript character ^)|\\
+% 8  & |_| & |(subscript character _)|\\
+% 10 & | | & |(blank space  )|\\
+% 11 & |a| & |(the letter a)|\\
+% 12 & |0| & |(the character 0)|\\
+% 13 & |~| & |(active character=macro:->\nobreakspace {})|\\
+% \end{tabular}
+% \caption{Possible \cs{catcode}s: code, example, and description.}\label{cc}
+% \end{table}
+% 
+% For control sequences and active characters, it
+% also prints their current \cs{meaning} as a bonus, or only the
+% beginning of it (ending with \cs{ETC.}) if it is more than one line
+% ($80$ columns) long.
 %
 % \DescribeMacro{\ShowTokensLogonly}
 % \DescribeMacro{\ShowTokensOnline}
@@ -388,6 +477,15 @@ This is a generated file. See ted.dtx for license information.
 % displaying it. The same remarks hold: use \cs{macro} or
 % \cs{the}\cs{toksreg} in the argument.
 %
+% \begin{quote}
+% |\begingroup \uccode`\~=32 \uppercase{\endgroup|\\
+% |  \def\macro{1~2}}|\\
+% |\ShowTokens*{\macro} %| prints on screen: [...]\\
+% |1 (the character 1)|\\
+% |  (active character=macro:-> )|\\
+% |2 (the character 2)|
+% \end{quote}
+%
 % \medskip
 % I would like to conclude with the following remark: I have really
 % tried to make sure \pf{ted}'s macros will work fine even with the
@@ -395,11 +493,9 @@ This is a generated file. See ted.dtx for license information.
 % and end-group characters, hash signs, spaces, \cs{bgroup} and
 % \cs{egroup}, \cs{par}, \cs{if}s, as well as exotic
 % charcode-\cs{catcode} pairs in every argument of the macros. As far as
-% I am aware, the only restriction is you should not use
-% some\footnote{Precisely, none of the control sequence in the token
-% lists should be \cs{let}-equal to \cs{ted@@end}, \cs{ted@@special},
-% \cs{ted@@active} as defined below.} of the very private macros of
-% \pf{ted} (those beginning with \cs{ted@@}) in your token lists.
+% I am aware, the only restriction is you should not use the very
+% private macros of \pf{ted} (those beginning with \cs{ted@@}) in your
+% token lists.
 %
 % \fi
 %
@@ -408,45 +504,47 @@ This is a generated file. See ted.dtx for license information.
 % \section{Implementation}
 %
 % A important problem, when trying to substitute things in token lists,
-% is to handle begin-group and end-group tokens, since prevent us from
-% to reading the tokens one by one, and tend to be difficult to handle
-% individually.  Two more kinds of tokens are special: the space tokens,
-% since they\footnote{Actually, only tokens with charcode $32$ and
-% \cs{catcode}~$10$ (i.e. $32_{10}$ tokens) are concerned. However, we
-% will process all \cs{catcode}-$10$ tokens the same way.} cannot be
-% grabbed as the undelimited argument of a macro, and the parameter
+% is to handle begin-group and end-group tokens, since they prevent us
+% from to reading the tokens one by one, and tend to be difficult to
+% handle individually.  Two more kinds of tokens are special: the space
+% tokens, since they\footnote{Actually, only tokens with charcode $32$
+% and \cs{catcode}~$10$ (i.e. $32_{10}$ tokens) are concerned.} cannot
+% be grabbed as the non-delimited argument of a macro, and the parameter
 % tokens (hash signs), since they cannot be part of the delimiters in
 % the parameter text of a macro. From now on, ``special tokens'' thus
 % denotes tokens with \cs{catcode} $1$, $2$, $6$ or $10$.
 %
-% To get rid of these problems, the \cs{Substitute} command procedes in
+% To get rid of these problems, the \cs{Substitute} command proceeds in
 % three steps. First, encode the input, replacing all special tokens
 % with nice control sequences representing them, then do the actual
 % substitution, and finally decode the output, replacing the special
 % control sequences with the initial special tokens.
 %
 % Encoding is the hard part. The idea is to try reading the tokens one
-% by one; for this we have two means: using a macro with one undelimited
-% argument, or something like \cs{let}. The former doesn't work well
-% with \cs{catcode}~$1$, $2$ or $10$ tokens, and the later do not see
-% the name of the token (its character code, or its name for a CS). So
-% we need to use both \cs{futurelet}, a ``grabbing'' macro with
+% by one; for this we have two means: using a macro with one
+% non-delimited argument, or something like \cs{let}. The former doesn't
+% work well with \cs{catcode}~$1$, $2$ or $10$ tokens, and the later do
+% not see the name of the token (its character code, or its name for a
+% CS). So we need to use both \cs{futurelet}, a ``grabbing'' macro with
 % argument, and \cs{string} in order to scan the tokens. Actually, the
-% encoding procedes in two passes: in the first, we try and detect the
+% encoding proceeds in two passes: in the first, we try and detect the
 % special tokens, storing their character codes for later use, then do
-% the the actual encoding in the last pass.
+% the actual encoding in the last pass.
 %
 % Decoding also processes the tokens one by one, and is simpler, since
-% special cases are allready detected. There is, however, a trick with
-% groups since, when we encouter a begin-group character, we have to
+% special cases are already detected. There is, however, a trick with
+% groups since, when we encounter a begin-group character, we have to
 % wait for the corresponding end-group before adding the whole thing to
 % the output. There is also a simpler version of decoding, for
 % \cs{ShowTokens}, for screen/log output, with no need to use this
-% trick, since it only outputs \cs{catcode}-$12$ charachters. Finally,
+% trick, since it only outputs \cs{catcode}-$12$ characters. Finally,
 % the substitution part uses a macro with delimited argument, defined on
-% the fly, using an idea of Jean-Côme Charpentier.
+% the fly.
 %
-% The code is divided as follows. \secttoc
+% The code is divided as follows. 
+% \par\vspace{-0.5\baselineskip}
+% \secttoc
+% \par\vspace{-0.5\baselineskip}
 %
 % \begin{macro}{\ted@toks}
 % \begin{macro}{\ted@list}
@@ -467,7 +565,7 @@ This is a generated file. See ted.dtx for license information.
 %
 % \begin{macro}{\ted@encloop}
 % \begin{macro}{\ted@encloop@}
-% The two passes use the same loop for reading the input allmost token
+% The two passes use the same loop for reading the input almost token
 % by token. This loop grabs the next token through a
 % \cs{futurelet}\ldots
 %    \begin{macrocode}
@@ -478,7 +576,7 @@ This is a generated file. See ted.dtx for license information.
 % \ldots then looks at it with some \cs{ifx} and \cs{ifcat} (non nested,
 % since the token could be an \cs{if} itself), in order to distinguish
 % between three cases: normal token, end reached, or special token. In
-% the later case, remember wich kind of special token it is, using a
+% the later case, remember which kind of special token it is, using a
 % numeric code.
 %    \begin{macrocode}
 \newcommand\ted@encloop@{%
@@ -542,8 +640,8 @@ This is a generated file. See ted.dtx for license information.
 \newcommand\ted@@active{\ted@@active@}
 %    \end{macrocode}
 % This sanitizing macro also mark active characters by \cs{let}-ing them
-% equal to \cs{ted@@active} in ordrer to detect them easily later, for
-% exemple while displaying on-screen token analysis.  All operations
+% equal to \cs{ted@@active} in order to detect them easily later, for
+% example while displaying on-screen token analysis.  All operations
 % (scanning, replacing, display and decoding) are going to happen inside
 % a group where \cs{ted@sanitize} has been executed, so that active
 % characters are no longer an issue.  \end{macro} \end{macro}
@@ -551,7 +649,7 @@ This is a generated file. See ted.dtx for license information.
 % \begin{macro}{\ted@encode} \begin{macro}{\ted@do@normal}
 % \begin{macro}{\ted@do@special} The \cs{ted@encode} macro is the master
 % macro for encoding. It only initialise a few things and launches the
-% two loops. We select one of the tree stpes by \cs{let}-ing
+% two loops. We select one of the tree steps by \cs{let}-ing
 % \cs{ted@do@normal} and \cs{ted@do@special} to the appropriate action.
 %    \begin{macrocode}
 \newcommand\ted@encode[1]{%
@@ -598,9 +696,9 @@ This is a generated file. See ted.dtx for license information.
 % For special tokens, it's harder. We must distinguish explicit
 % character tokens from control sequences \cs{let}-equal to special
 % tokens.  For this, we use \cs{string}, then grab the next character to
-% see wether its code is \cs{escapechar} or not.  Actually, things are
+% see whether its code is \cs{escapechar} or not.  Actually, things are
 % not this easy, for two reasons. First, we have to make sure the next
-% character's code is not allready \cs{escapechar} before the
+% character's code is not already \cs{escapechar} before the
 % \cs{string}, by accident. For this purpose, we set \cs{escapechar}
 % to~$0$ except if next character's code is also~$0$, in which case we
 % prefer~$1$.
@@ -642,7 +740,7 @@ This is a generated file. See ted.dtx for license information.
 % \begin{macro}{\ted@list@special}
 % Now that we got rid of this nasty space problem, we know for sure that
 % the next token has \cs{catcode} $12$, so we can easily grab it as an
-% argument, find its charcode, and decide wether the original token was
+% argument, find its charcode, and decide whether the original token was
 % a control sequence or not. Note the \cs{expandafter} over
 % \cs{endgroup} trick, since we need to add the charcode to the list
 % outside the group (opened for the modified \cs{escapechar}) though it
@@ -714,7 +812,7 @@ This is a generated file. See ted.dtx for license information.
 % \end{macro}
 % \begin{macro}{\ted@cscl@loop}
 % We first add the CS to the output, then break it with a \cs{string} in
-% order to look at its name with the folowing loop. It first grabs
+% order to look at its name with the following loop. It first grabs
 % everything to the first space\ldots
 %    \begin{macrocode}
 \@ifdefinable\ted@cscl@loop{%
@@ -739,7 +837,7 @@ This is a generated file. See ted.dtx for license information.
 %
 % \begin{macro}{\ted@special@encode}
 % Now, let's come back to the special tokens. As we don't need the token
-% to encode it (we allready know its \cs{catcode} from \cs{ted@code},
+% to encode it (we already know its \cs{catcode} from \cs{ted@code},
 % and its charcode is stored in the list), we first gobble it in order
 % to prepare for next iteration.
 %    \begin{macrocode}
@@ -779,7 +877,7 @@ This is a generated file. See ted.dtx for license information.
 % 
 % \begin{macro}{\ted@list@read}
 % \begin{macro}{\ted@list@read@}
-% Here we used the folowing macros in order to manage our charcode list.
+% Here we used the following macros in order to manage our charcode list.
 % The reading one is fully expandable.
 %    \begin{macrocode}
 \newcommand\ted@list@read{%
@@ -813,7 +911,7 @@ This is a generated file. See ted.dtx for license information.
 % \begin{macro}{\ted@add@toks}
 % Main decoding macro is \cs{ted@decode}. It is again a loop, processing
 % the token list one by one. For normal tokens, things are easy as
-% allways: just add them to the output, via
+% always: just add them to the output, via
 %    \begin{macrocode}
 \newcommand\ted@add@toks[1]{%
   \ted@toks\expandafter{\the\ted@toks#1}}
@@ -849,7 +947,7 @@ This is a generated file. See ted.dtx for license information.
   \begingroup\escapechar\m@ne \expandafter\endgroup\expandafter
   \def\expandafter\ted@decode@special\string\ted@@#1#2\@nil{%
 %    \end{macrocode}
-% It then prodeces according to the first code, building back the
+% It then proceeds according to the first code, building back the
 % original token and adding it to the output. The first two kinds of
 % tokens (macro parameter characters and blank spaces) are easily dealt
 % with.
@@ -866,7 +964,7 @@ This is a generated file. See ted.dtx for license information.
 % they are impossible to handle individually: we can only add a
 % \meta{balanced text} to the output. So, when we find a begin-group
 % character, we just open a group (a real one), and start decoding again
-% inside the group, until we find the correponding end-group character.
+% inside the group, until we find the corresponding end-group character.
 % Then, we enclose the local decoded list of tokens into the correct
 % begin-group/end-group pair, and then add it to the output one group
 % level below, using the \cs{expandafter}-over-\cs{endgroup} trick
@@ -889,11 +987,11 @@ This is a generated file. See ted.dtx for license information.
 % Charpentier, who first taught me the clever use delimited arguments
 % (and lots of other wonderful things) in \nolinkurl{fr.comp.text.tex}}
 % is to use a macro whose first argument is delimited with the
-% \meta{from} string, wich outputs the first argument followed by the
+% \meta{from} string, which outputs the first argument followed by the
 % \meta{to} string, and loops. Obviously this macro has to be defined on
 % the fly. All tokens lists need to be encoded first, and the output
 % decoded at end. Since all this needs to happens inside a group (for
-% \cs{ted@sanitize} and the marking up of special-charaters control
+% \cs{ted@sanitize} and the marking up of special-characters control
 % sequences), remember to ``export'' \cs{ted@toks} when done.
 %
 % \begin{macro}{\ted@Substitude}
@@ -913,7 +1011,7 @@ This is a generated file. See ted.dtx for license information.
 %    \end{macrocode}
 % \end{macro}
 % \begin{macro}{\ted@def@subsmac}
-% The actual iterative substitution macro is defined by the folowing
+% The actual iterative substitution macro is defined by the following
 % macro, whose arguments are the \meta{to} string, encoded, and the
 % plain \meta{from} string.
 %    \begin{macrocode}
@@ -965,7 +1063,7 @@ This is a generated file. See ted.dtx for license information.
 \newcommand\ted@ShowTokens[1]{%
   \begingroup \ted@sanitize
   \ted@toks{#1}%
-  \ted@typeout{--- Begin token decompositon of:}%
+  \ted@typeout{--- Begin token decomposition of:}%
   \ted@typeout{\@spaces \the\ted@toks}%
   \ted@encode{#1}%
   \expandafter\ted@show@toks\the\ted@toks\ted@@end
@@ -974,7 +1072,7 @@ This is a generated file. See ted.dtx for license information.
 %    \end{macrocode}
 % \end{macro}
 % \begin{macro}{\ted@show@toks}
-% Then we proceed, allmost like decoding, iteratively, processing the
+% Then we proceed, almost like decoding, iteratively, processing the
 % encoded tokens one by one. We detect control sequences the same way as
 % in pre-scanning. For our tests (and also for use in
 % \cs{ted@show@toks@}) we embed |#1| into \cs{ted@toks} in order to
@@ -1069,7 +1167,7 @@ This is a generated file. See ted.dtx for license information.
 % next section.
 %    \begin{macrocode}
 \newcommand\ted@type@hash[1]{%
-  \ted@typeout{#1 (macro paramater character #1)}}
+  \ted@typeout{#1 (macro parameter character #1)}}
 %    \end{macrocode}
 %    \begin{macrocode}
 \newcommand\ted@type@blank[1]{%
@@ -1111,7 +1209,7 @@ This is a generated file. See ted.dtx for license information.
 % \end{macro}
 % \begin{macro}{\ted@type@long}
 % Lines are cut and displayed by \cs{ted@type@long}. This macro uses a
-% loop, conting down how many columns remain on the current line. The
+% loop, counting down how many columns remain on the current line. The
 % input need to be fully expanded first, and the output is stored in
 % \cs{ted@toks}.
 %    \begin{macrocode}
@@ -1170,7 +1268,7 @@ This is a generated file. See ted.dtx for license information.
 % \end{macro}
 % \begin{macro}{\ted@tl@finish}
 % When the end has been reached (either because a \cs{@nil} was
-% encountered or because the line is allmost full), it's time to
+% encountered or because the line is almost full), it's time to
 % actually display the result.  We add \cs{ETC.} at the end when the
 % full \cs{meaning} isn't displayed.
 %    \begin{macrocode}
