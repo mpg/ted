@@ -8,18 +8,19 @@
 \let\sptoken= \@sptoken
 \let\hashtoken=#
 \let\tedout\ted@toks
-\let\tednb\ted@nocc
+\let\tednb\ted@count
 \def\nosanitize{\let\ted@sanitize\relax}
-\@ifdefinable\Test{%
-\long\def\Test#1\Endtest{%
+\newcommand\Test[1]{%
   \typeout{\unexpanded{#1}}%
-  #1}}
+  #1}
+\newcommand\TestS[1]{%
+  \Test{#1}\typeout{\the\tedout}}
 \makeatother
 
 %% \ShowTokens {{{
 
 % \ShowTokens{abc123}
-\ShowTokens{{}$&#^_ a0~b$\truc\relax}
+% \ShowTokens{{}$&#^_ a0~b$\truc\relax}
 % { \let~=#%
 %   \ShowTokens{a\ifx b\bgroup c\sptoken d\egroup e\hashtoken f~g\par}
 %   }
@@ -141,13 +142,19 @@
 % a\ShowTokens{abc}b\par
 % a\Substitute{abc}{b}{d}b\par
 
+%% rapport de bug (?) du 18/03/2008
+%%
+% \TestS{\Substitute{}{*}{!}}
+% \TestS{\Substitute{{}}{*}{!}}
+% \TestS{\Substitute{{}*}{*}{!}}
+% \TestS{\Substitute{*{*}}{*}{!}}
+
 \nosanitize
 \wlog{\noexpand\makeatletter}
 \tracingmacros1
 \tracingassigns1
 \tracingcommands1
 %\tracingifs1
-
 
 \tracingmacros0
 \tracingassigns0
