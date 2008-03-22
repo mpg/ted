@@ -78,8 +78,8 @@ This is a generated file. See ted.dtx for license information.
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
+\usepackage{fixltx2e, mparhack}
 \usepackage[babel=true, expansion=false]{microtype}
-\usepackage{fixltx2e}
 \expandafter\newif\csname iffrenchdoc\endcsname % cachez ce if...
 %<pilote>\frenchdoctrue
 %</driver|pilote>
@@ -94,7 +94,7 @@ This is a generated file. See ted.dtx for license information.
 \newcommand*\eng[1]{\emph{\foreignlanguage{english}{#1}}}
 \usepackage[bookmarks=false]{hyperref}
 \hypersetup{%
-  pdftitle=L'extension ted
+  pdftitle=L'extension ted,
   pdfsubject=Un éditeur de liste de lexèmes pour LaTeX2e}
 %</pilote>
 %<*gobble>
@@ -120,8 +120,7 @@ This is a generated file. See ted.dtx for license information.
 \newcommand\tocwithmini{%
   \dosecttoc[n]
   \setcounter{tocdepth}{1}\tableofcontents
-  \setcounter{tocdepth}{3}\faketableofcontents
-  }
+  \setcounter{tocdepth}{3}\faketableofcontents}
 %</driver>
 %<*gobble>
 \fi
